@@ -1,0 +1,199 @@
+.centro{
+    position: relative;
+    width: 500px;
+    left: 15%;
+    top: 50%;
+}
+
+.imguser{
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    border: 0;
+}
+
+.dvLista{
+    position: relative;
+    height: 40%;
+}
+
+.dvListaInside{
+    position: relative;
+    top: 5%;
+}
+
+.hijo{
+    position: absolute;
+    top: 10%;
+    left: 5%;
+}
+
+.divIzq{
+    box-shadow: 5px 10px black;
+}
+
+.botones{
+    position: relative;
+    top: 90%;
+    left: 30%;
+}
+
+.btnArr{
+    border: 0;
+}
+
+.fixed{
+    height: 180px;
+    overflow:auto;
+}
+
+.btnPlay{
+    border: 0;
+}
+
+.seekBar{
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: rgb(218, 218, 231);
+    display: flex;
+    cursor: pointer;
+}
+
+.loadingbar{
+    position: relative;
+    top: 50%;
+    left: 20%;
+    width: 500px;
+}
+
+.fill{
+    
+    width: 2%;
+    height: 5px;
+    background-color: rgb(125, 191, 201);   
+}
+
+.handle{
+    width: 6px;
+    height: 6px;
+    background-color: rgb(125, 191, 201);
+    border-radius: 50%;
+    margin-left: -5px;
+    transform: scale(2);
+}
+
+.dvHover{
+    width: 100px;
+}
+
+.dvHover:hover{
+    transform: scale(1.1);
+    background-color: cadetblue;
+    opacity:0.5;
+    
+}
+
+.Add{
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 0px solid #000000;
+    -webkit-box-shadow: 4px 0px 28px -4px rgba(0,0,0,0.69);
+    -moz-box-shadow: 4px 0px 28px -4px rgba(0,0,0,0.69);
+    box-shadow: 4px 0px 28px -4px rgba(0,0,0,0.69);
+    position: relative;
+    width: 50%;
+    height: 70%;
+    top: 10%;
+    left: 25%;
+    background-color: whitesmoke;
+}
+
+.dvInp{
+    position: relative;
+    top: 80%;
+    left: 10%;
+}
+
+.agr{
+    position: relative;
+    top: 90%;
+    left: 10%;
+}
+
+.Inp{
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+
+.DivInside2{
+    position: relative;
+    top: 15%;
+}
+
+.title-bar {
+    -webkit-app-region: drag;
+    margin: 0;
+    display: flex;
+    background-color: rgb(74, 147, 144);
+    width: 100%;
+    height: 25px;
+  }
+  
+  .menu-logo-container {
+    background-color: none;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .window-controls-container {
+    background-color: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .menu-button:hover {
+    background-color: grey;
+  }
+  
+  .minimize-button {
+    -webkit-app-region: no-drag;
+    background-color: rgb(113, 118, 208);
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .minimize-button:hover {
+    background-color: grey;
+  }
+  
+  .min-max-button {
+    -webkit-app-region: no-drag;
+    background-color: blue;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .min-max-button:hover {
+    background-color: grey;
+  }
+  
+  .close-button {
+    -webkit-app-region: no-drag;
+    background-color: red;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .close-button:hover {
+    background-color: grey;
+  }

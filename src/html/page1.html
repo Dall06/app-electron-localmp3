@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+  <html style="height: 100%; width: 100%;">
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="../css/page1css.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <script>
+            window.$ = window.jQuery = require("jquery")
+      </script>
+    </head>
+    <header>
+            <div class="title-bar">
+                    <div class="menu-logo-container">
+                        <i class="material-icons" style="color: aliceblue;">music_note</i>
+                        <br>
+                        <p style="color: aliceblue;">Reproductor MP3</p>
+                    </div>
+                    <div class="window-controls-container">
+                      <a id="minimize-button" class="minimize-button"><i class="material-icons" style="color: aliceblue;">drag_handle</i></a>
+                      <a id="close-button" class="close-button"><i class="material-icons" style="color: aliceblue;">close</i></a>
+                    </div>
+                  </div>
+    </header>
+    <body style="width: 100%; height: 100%; overflow: hidden; background: rgb(233, 233, 233);" >  
+        <div class="progress loadingbar" id="carga">
+            <div class="indeterminate"></div>
+        </div>
+
+        <div class="row p-1 container hide" id="dv1" style="width: 100%; height: 100%;">
+
+            <div class="col s4 divIzq" style="height: 100%; background-color: rgb(80, 164, 161);">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="imguser" src="../img/51505.jpg" id="lblImg" width="100%" height="150px">
+                        <label class="card-title" style="color: white;" id="lblUser">Usuario</label>
+                    </div>
+                </div>
+
+                <div class="dvLista" >
+                    <input type="text" placeholder="Buscar" style="color: aliceblue;" id="txtBusqueda" onchange="Buscar()">
+                    <h6 style="color: aliceblue;">Lista</h6>
+                    <div class="dvListaInside">
+                            <div id="blockCanciones" class="fixed">
+                                <h6 style="color: aliceblue;" >No hay ninguan canción</h6>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s8" style="background: rgb(233, 233, 233); height: 100%; position: relative;">
+                <div class="row hijo">
+                     <div class="col m10">
+                        <div class="card">
+                            <div class="card-image" id="cardMusic">
+                                <img src="../img/2.jpg" id="imgSong" width="100%" height="270px">
+                                <span  id="txtNomC" class="card-title">Nombre canción</span>
+                            </div>
+                            <div class="card-content">
+                                <h6 id="txtAutor">Autor</h6>
+                                <div class="botones">
+                                    <a class="btnArr p-1 waves-effect waves-teal btn-flat" onclick="PrevSong()()" id="btnAnt"><i class="material-icons arrD" style="color: black;" id="ArrL">keyboard_arrow_left</i></a>
+                                    <a class="btnPlay p-1 waves-effect waves-teal btn-flat" onclick="PlayPause()" id="btnPlay"><i class="material-icons" style="color: black;" id="ArrP">play_arrow</i></a>
+                                    <a class="btnArr p-1 waves-effect waves-teal btn-flat" onclick="NextSong()()" id="btnSig"><i class="material-icons arrI" style="color: black;" id="ArrD">keyboard_arrow_right</i></a>
+                                </div>
+                            </div>
+                            <div id="seekBar" class="seekBar">
+                                <div class="fill" id="fill"></div>
+                                <div class="handle" id="handle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Add hide" id="blockAdd">
+            <div class="DivInside2">
+                <div class="input-field Inp">
+                    <input placeholder="Song Name" id="SongName" type="text" class="validate">
+                    <label for="SongName">Song Name</label>
+                  </div>
+
+                  <div class="input-field Inp">
+                    <input placeholder="Song Autor" id="SongAutor" type="text" class="validate">
+                    <label for="SongAutor">Autor</label>
+                  </div>
+                  <div class="p-2 dvInp">
+                    <div class="">
+                        <label>Cancion</label>
+                        <input type="file" class="sep" accept="audio/*" id="SongSrc" accept="audio/*,video/*,image/*" name="Song" multiple>
+                    </div>
+                    <div class="">
+                        <label>Imagen</label>
+                        <input type="file" accept="image/*" class="sep2" id="ImgSrc" name="Img" multiple>    
+                    </div>                  
+                  </div>
+                  <div class="agr">
+                      <a class="waves-effect waves-light btn" onclick="AgregarCancion()">Agregar</a>
+                  </div>
+            </div>
+        </div>
+
+        <div class="Add hide" id="blockEdit">
+            <div class="DivInside2">
+                <div class="input-field Inp">
+                    <p>Bienvenido, Configura tu usuario...</p>
+                </div>
+                <div class="input-field Inp">
+                    <input placeholder="Nickname" id="Nickname" type="text" class="validate">
+                    <label for="Nickname">Nickname</label>
+                </div>
+                <div class="p-2 dvInp">
+                    <label>Imagen de usuario</label>
+                    <input type="file" class="sep2" accept="image/*" id="ImgSrcU" name="Img" multiple>                      
+                </div>
+                <div class="agr">
+                    <a class="waves-effect waves-light btn" onclick="EdicionCompleta()">Terminar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed-action-btn toolbar hide" id="btnFlotante">
+            <a class="btn-floating btn-large blue">
+                <i class="large material-icons">settings</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating gray" id="btnAdd" onclick="addFuncion()"><i class="material-icons" >add</i></a></li>
+                <li><a class="btn-floating gray" id="" onclick="editFuncion()"><i class="material-icons">edit</i></a></li>
+                <li><a class="btn-floating gray" id="btnExit" onclick="exit()"><i class="material-icons">exit_to_app</i></a></li>
+            </ul>
+        </div>
+
+      <!--JavaScript at end of body for optimized loading-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script src="../js/page1.js"></script>
+    </body>
+  </html>
